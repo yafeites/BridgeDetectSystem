@@ -60,34 +60,36 @@ namespace BridgeDetectSystem.windows.work
         {
             try
             {
-                firstStandard = adamhelper.first_frontPivotDisStandard;
-                secondStanard = adamhelper.second_frontPivotDisStandard;
-                threeStandard = adamhelper.three_standard;
-                fourStandard = adamhelper.four_standard;//四个基准
-                Dictionary<int, FrontPivot> dicFrontPivot = adamhelper.frontPivotDic;
-                double[] frontPivotDis = new double[4];//沉降位移数组           
-                frontPivotDis[0] = Math.Round(firstStandard - dicFrontPivot[0].GetDisplace(), 1);
-                frontPivotDis[1] = Math.Round(secondStanard - dicFrontPivot[1].GetDisplace(), 1);
-                frontPivotDis[2] = Math.Round(threeStandard - dicFrontPivot[2].GetDisplace(), 1);
-                frontPivotDis[3] = Math.Round(fourStandard - dicFrontPivot[3].GetDisplace(), 1);
+                //firstStandard = adamhelper.first_frontPivotDisStandard;
+                //secondStanard = adamhelper.second_frontPivotDisStandard;
+                //threeStandard = adamhelper.three_standard;
+                //fourStandard = adamhelper.four_standard;//四个基准
+                Dictionary<int, Anchor> dicAnchor = adamhelper.anchorDic;
+                //double[] frontPivotDis = new double[4];//沉降位移数组 
+                //frontPivotDis[0] = Math.Round(firstStandard - dicFrontPivot[0].GetDisplace(), 1);
+                //frontPivotDis[1] = Math.Round(secondStanard - dicFrontPivot[1].GetDisplace(), 1);
+                //frontPivotDis[2] = Math.Round(threeStandard - dicFrontPivot[2].GetDisplace(), 1);
+                //frontPivotDis[3] = Math.Round(fourStandard - dicFrontPivot[3].GetDisplace(), 1);
                 for (int k = 0; k < 4; k++)
                 {
-                    frontPivotDis[k] = Math.Abs(frontPivotDis[k]);
+                    //frontPivotDis[k] = Math.Abs(frontPivotDis[k]);
+
                 }
-                s1 = frontPivotDis[0];//绘制曲线纵坐标的值
-                s2 = frontPivotDis[1];
-                s3 = frontPivotDis[2];
-                s4 = frontPivotDis[3];
-                lblS1.Text = frontPivotDis[0].ToString();
-                lblS2.Text = frontPivotDis[1].ToString();
-                lblS3.Text = frontPivotDis[2].ToString();
-                lblS4.Text = frontPivotDis[3].ToString();
+                s1 = dicAnchor[0].GetForce();//绘制曲线纵坐标的值
+                s2 = dicAnchor[1].GetForce();
+                s3 = dicAnchor[2].GetForce();
+                s4 = dicAnchor[3].GetForce();
+                lblS1.Text = dicAnchor[0].GetForce().ToString();
+                lblS2.Text = dicAnchor[1].GetForce().ToString();
+                lblS3.Text = dicAnchor[2].GetForce().ToString();
+                lblS4.Text = dicAnchor[3].GetForce().ToString();
             }
 
             catch (Exception ex)
             {
                 timer1.Enabled = false;
-                MessageBox.Show("采集前支点位移数据失败，请检查硬件后重启软件。" + ex.Message);
+                //MessageBox.Show("采集前支点位移数据失败，请检查硬件后重启软件。" + ex.Message);
+                MessageBox.Show("采集锚杆数据失败，请检查硬件后重启软件。" + ex.Message);
             }
 
         }
@@ -118,7 +120,7 @@ namespace BridgeDetectSystem.windows.work
 
             chart1.ChartAreas[0].AxisX.LabelStyle.Format = "HH:mm:ss";
             chart1.ChartAreas[0].AxisX.Title = "时间";
-            chart1.ChartAreas[0].AxisY.Title = "前支架沉降位移（mm）";
+            chart1.ChartAreas[0].AxisY.Title = "锚杆力（KN）";
             chart1.ChartAreas[0].AxisX.Minimum = minValue.ToOADate();
             chart1.ChartAreas[0].AxisX.Maximum = maxValue.ToOADate();
             chart1.Series.Clear();
@@ -128,28 +130,28 @@ namespace BridgeDetectSystem.windows.work
             f1.BorderWidth = 1;
             f1.BorderColor = Color.Red;
             //f1.IsValueShownAsLabel = true;
-            f1.LegendText = "一号前支点";
+            f1.LegendText = "一点锚杆力";
             f1.XValueType = ChartValueType.DateTime;
             //f2
             f2 = new Series();
             f2.ChartType = SeriesChartType.Spline;
             f2.BorderWidth = 1;
             f2.BorderColor = Color.Orange;
-            f2.LegendText = "二号前支点";
+            f2.LegendText = "二点锚杆力";
             f2.XValueType = ChartValueType.DateTime;
 
             f3 = new Series();
             f3.ChartType = SeriesChartType.Spline;
             f3.BorderWidth = 1;
             f3.BorderColor = Color.Green;
-            f3.LegendText = "三号前支点";
+            f3.LegendText = "三点锚杆力";
             f3.XValueType = ChartValueType.DateTime;
 
             f4 = new Series();
             f4.ChartType = SeriesChartType.Spline;
             f4.BorderWidth = 1;
             f4.BorderColor = Color.Blue;
-            f4.LegendText = "四号前支点";
+            f4.LegendText = "四点锚杆力";
             f4.XValueType = ChartValueType.DateTime;
             chart1.Series.Add(f1);
             chart1.Series.Add(f2);
@@ -195,6 +197,11 @@ namespace BridgeDetectSystem.windows.work
                 }
             }
             catch (Exception e) { }
+        }
+
+        private void lblS1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
