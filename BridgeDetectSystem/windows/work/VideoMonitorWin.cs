@@ -11,7 +11,7 @@ namespace BridgeDetectSystem
     {
 
         VideoPlayer player = null;
-        AdamHelper2 adamHelper2 = null;
+        //AdamHelper2 adamHelper2 = null;
         WarningManager2 warningManager2 = null;
 
         public VideoMonitorWin()
@@ -25,7 +25,7 @@ namespace BridgeDetectSystem
         private void VideoMonitor_Load(object sender, EventArgs e)
         {
             this.initial();
-            adamHelper2.StartTimer(250);
+           // adamHelper2.StartTimer(250);
             warningManager2.BgStart();//开始后台报警
             #region 初始化视频监控
 
@@ -126,7 +126,7 @@ namespace BridgeDetectSystem
                 warningManager2.BgCancel();
             }
 
-            adamHelper2.StopTimer();
+            //adamHelper2.StopTimer();
         }
 
         private void RemoveAllPanelAndPictureBox()
@@ -198,7 +198,7 @@ namespace BridgeDetectSystem
             {
                 warningManager2.BgCancel();
             }
-            adamHelper2.StopTimer();
+            //adamHelper2.StopTimer();
             this.Close();
 
             VideoMonitorWin win = new VideoMonitorWin();
@@ -208,7 +208,7 @@ namespace BridgeDetectSystem
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            double y = Math.Round(adamHelper2.v, 1);
+            //double y = Math.Round(adamHelper2.v, 1);
             txtRailway.Text = y.ToString();
 
         }
