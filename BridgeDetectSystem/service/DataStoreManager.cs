@@ -145,9 +145,9 @@ namespace BridgeDetectSystem.service
         {
             try
             {
-                InsertSteeveData();
-               // InsertAnchorData();
-                InsertFrontPivotDis();
+                //InsertSteeveData();
+                InsertAnchorData();
+                //InsertFrontPivotDis();
             }
             catch (Exception ex)
             {
