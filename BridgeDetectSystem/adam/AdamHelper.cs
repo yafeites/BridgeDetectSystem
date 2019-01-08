@@ -133,68 +133,67 @@ namespace BridgeDetectSystem.adam
             for (int i = 0; i < adamList.Count; i++)
             {
                 allDataDic.TryGetValue(adamList[i].id, out tempDic);
+                //if (i == 0)
+                //{
+                //    ////读取模块192.168.1.3数据，吊杆位移0，1，2，3与吊杆力4，5，6，7通道                  
+                //    //若更换 ？。；j=0 标号 17080383 空载 4.026mA 
+                //    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                //    tempDic.TryGetValue(4, out forceData);
+                //    forceSensor.readValue = double.Parse(forceData);
+                //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                //    tempDic.TryGetValue(0, out disData);
+                //    disSensor.readValue = double.Parse(disData);
+                //    Steeve steeve0 = new Steeve(0, forceSensor, disSensor);
+                //    steeveDic[steeve0.id] = steeve0;
+                //    //j=1标号17110130空载3.992mA
+                //    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                //    tempDic.TryGetValue(5, out forceData);
+                //    forceSensor.readValue = double.Parse(forceData);
+                //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                //    tempDic.TryGetValue(1, out disData);
+                //    disSensor.readValue = double.Parse(disData);
+                //    Steeve steeve1 = new Steeve(1, forceSensor, disSensor);
+                //    steeveDic[steeve1.id] = steeve1;
+                //    //j=2 17080285 空载 4.012mA
+                //    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                //    tempDic.TryGetValue(6, out forceData);
+                //    forceSensor.readValue = double.Parse(forceData);
+                //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                //    tempDic.TryGetValue(2, out disData);
+                //    disSensor.readValue = double.Parse(disData);
+                //    Steeve steeve2 = new Steeve(2, forceSensor, disSensor);
+                //    steeveDic[steeve2.id] = steeve2;
+                //    //j=3 17080386 空载4.014mA
+                //    forceSensor = new Sensor(SensorType.forceSensor, 3.96, 20, 300, 1, 0);
+                //    tempDic.TryGetValue(7, out forceData);
+                //    forceSensor.readValue = double.Parse(forceData);
+                //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
+                //    tempDic.TryGetValue(3, out disData);
+                //    disSensor.readValue = double.Parse(disData);
+                //    Steeve steeve3 = new Steeve(3, forceSensor, disSensor);
+                //    steeveDic[steeve3.id] = steeve3;
 
-                if (i == 0)
-                {
-                    ////读取模块192.168.1.3数据，吊杆位移0，1，2，3与吊杆力4，5，6，7通道                  
-                    //若更换 ？。；j=0 标号 17080383 空载 4.026mA 
-                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                    tempDic.TryGetValue(4, out forceData);
-                    forceSensor.readValue = double.Parse(forceData);
-                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    tempDic.TryGetValue(0, out disData);
-                    disSensor.readValue = double.Parse(disData);
-                    Steeve steeve0 = new Steeve(0, forceSensor, disSensor);
-                    steeveDic[steeve0.id] = steeve0;
-                    //j=1标号17110130空载3.992mA
-                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                    tempDic.TryGetValue(5, out forceData);
-                    forceSensor.readValue = double.Parse(forceData);
-                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    tempDic.TryGetValue(1, out disData);
-                    disSensor.readValue = double.Parse(disData);
-                    Steeve steeve1 = new Steeve(1, forceSensor, disSensor);
-                    steeveDic[steeve1.id] = steeve1;
-                    //j=2 17080285 空载 4.012mA
-                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
-                    tempDic.TryGetValue(6, out forceData);
-                    forceSensor.readValue = double.Parse(forceData);
-                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    tempDic.TryGetValue(2, out disData);
-                    disSensor.readValue = double.Parse(disData);
-                    Steeve steeve2 = new Steeve(2, forceSensor, disSensor);
-                    steeveDic[steeve2.id] = steeve2;
-                    //j=3 17080386 空载4.014mA
-                    forceSensor = new Sensor(SensorType.forceSensor, 3.96, 20, 300, 1, 0);
-                    tempDic.TryGetValue(7, out forceData);
-                    forceSensor.readValue = double.Parse(forceData);
-                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 29.8, 100, 20);
-                    tempDic.TryGetValue(3, out disData);
-                    disSensor.readValue = double.Parse(disData);
-                    Steeve steeve3 = new Steeve(3, forceSensor, disSensor);
-                    steeveDic[steeve3.id] = steeve3;
-
-                }
+                //}
 
 
-                else if (i == 1)
-                {
-                    int j = 0;
+                
+                //{
+                    //int j = 0;
                     // int count = 0;
 
-                    for (j = 0; j < 3; j++)//前支架位移电流
-                    {
-                        disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000,0);
-                        tempDic.TryGetValue(j, out disData);
-                        disSensor.readValue = double.Parse(disData);
-                        FrontPivot pivot = new FrontPivot(j, disSensor);
-                        frontPivotDic[pivot.id] = pivot;
-                    }
-                    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000, 0);
-                    tempDic.TryGetValue(3, out disData);
-                    disSensor.readValue = double.Parse(disData);
-                    FrontPivot pivot1 = new FrontPivot(3, disSensor);
-                    frontPivotDic[pivot1.id] = pivot1;
+                    //for (j = 0; j < 3; j++)//前支架位移电流
+                    //{
+                    //    disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000,0);
+                    //    tempDic.TryGetValue(j, out disData);
+                    //    disSensor.readValue = double.Parse(disData);
+                    //    FrontPivot pivot = new FrontPivot(j, disSensor);
+                    //    frontPivotDic[pivot.id] = pivot;
+                    //}
+                    //disSensor = new Sensor(SensorType.displaceSensor, 4, 20, 1.2, 1000, 0);
+                    //tempDic.TryGetValue(3, out disData);
+                    //disSensor.readValue = double.Parse(disData);
+                    //FrontPivot pivot1 = new FrontPivot(3, disSensor);
+                    //frontPivotDic[pivot1.id] = pivot1;
 
                     #region 锚杆力，接收但不显示，不保存，不后台报警
                     //  for (j = 4; j < 8; j++)//锚杆力
@@ -226,7 +225,7 @@ namespace BridgeDetectSystem.adam
                     Anchor anchor3 = new Anchor(3, forceSensor);
                     anchorDic[anchor3.id] = anchor3;
                     #endregion                
-                }
+                //}
             }
         }
 
