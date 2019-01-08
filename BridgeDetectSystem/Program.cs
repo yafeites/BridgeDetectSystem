@@ -77,7 +77,7 @@ namespace BridgeDetectSystem
 
 
 
-            var oper2 = new Adam6217Operation("192.168.1.190", 1);
+            //var oper2 = new Adam6217Operation("192.168.1.190", 1);
             //浇筑状态接收线程初始化
             List <AdamOperation> list = new List<AdamOperation>
             {
@@ -97,14 +97,14 @@ namespace BridgeDetectSystem
             }
 
             //行走状态接收线程初始化
-            try
-            {
-                AdamHelper2.Initialize(oper2);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    AdamHelper2.Initialize(oper2);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
 
             //数据保存类初始化
             //放到主窗体加载那里初始化
