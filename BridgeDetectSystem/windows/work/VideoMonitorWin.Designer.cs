@@ -152,7 +152,7 @@
             this.btnVideo5.Name = "btnVideo5";
             this.btnVideo5.Size = new System.Drawing.Size(71, 44);
             this.btnVideo5.Text = "5放大";
-            this.btnVideo5.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.btnVideo5.Click += new System.EventHandler(this.btnVideo5_Click);
             // 
             // panel1
             // 
