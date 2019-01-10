@@ -21,6 +21,7 @@ namespace BridgeDetectSystem.video
 
     class VideoPlayer
     {
+        
         #region 字段
         private bool m_bInitSDK = false;
         private uint iLastErr = 0;
@@ -47,7 +48,7 @@ namespace BridgeDetectSystem.video
         string DVRPassword;//设备登录密码 Password to login
 
         #endregion
-
+        
         private static VideoPlayer instance = null;
         public static VideoPlayer GetInstance()
         {
@@ -57,7 +58,49 @@ namespace BridgeDetectSystem.video
             }
             return instance;
         }
+        /// <summary>
+        /// 摄像头自动旋转
+        /// </summary>
+        public void ControlAuto(int index, bool stoporstart,uint n)
+        {
+            if (stoporstart == true){
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.PAN_AUTO,1,n);
+            }
+            else
+            {
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.PAN_AUTO, 0, n);
+            }
+            
+        }
+        /// <summary>
+        /// 摄像头手动按钮操作
+        /// </summary>
+        public void ControlOpertion(int index,String opertion,bool stoporstart,uint n )
+        {
+            uint flag=0;
+            if (stoporstart == true)
+            {
+                flag = 1;
+            }
+            
+            if (opertion.Equals("down"))
+            {
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.TILT_DOWN,flag, n);
+            }
+            if (opertion.Equals("up"))
+            {
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.TILT_UP, flag, n);
+            }
+            if (opertion.Equals("left"))
+            {
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.PAN_LEFT, flag, n);
+            }
+            if (opertion.Equals("right"))
+            {
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.PAN_RIGHT, flag, n);
+            }
 
+        }
         public static void initClass(string DVRIPAddress, string DVRUserName, string DVRPassword, Int16 DVRPortNumber = 8000)
         {
             if (instance != null)
