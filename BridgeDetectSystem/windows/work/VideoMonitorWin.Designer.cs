@@ -48,13 +48,9 @@
             this.picBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.picBox1 = new System.Windows.Forms.PictureBox();
-            this.txtRailway = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.panelmax = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.picBox5 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -63,6 +59,9 @@
             this.left = new System.Windows.Forms.Button();
             this.down = new System.Windows.Forms.Button();
             this.up = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.picBox5 = new System.Windows.Forms.PictureBox();
+            this.paneltop = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,9 +76,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
             this.panelmax.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox5)).BeginInit();
-            this.panel9.SuspendLayout();
+            this.paneltop.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -94,9 +94,9 @@
             this.btnVideo3,
             this.btnVideo4,
             this.btnVideo5});
-            this.menuStrip1.Location = new System.Drawing.Point(22, 72);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1745, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1832, 48);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -161,7 +161,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1025, 765);
+            this.panel1.Size = new System.Drawing.Size(1019, 833);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -171,16 +171,17 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 389);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1025, 376);
+            this.panel3.Size = new System.Drawing.Size(1019, 444);
             this.panel3.TabIndex = 1;
             // 
             // panel7
             // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.picBox4);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(510, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(515, 376);
+            this.panel7.Size = new System.Drawing.Size(509, 444);
             this.panel7.TabIndex = 1;
             // 
             // picBox4
@@ -188,17 +189,18 @@
             this.picBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picBox4.Location = new System.Drawing.Point(0, 0);
             this.picBox4.Name = "picBox4";
-            this.picBox4.Size = new System.Drawing.Size(515, 376);
+            this.picBox4.Size = new System.Drawing.Size(505, 440);
             this.picBox4.TabIndex = 0;
             this.picBox4.TabStop = false;
             // 
             // panel6
             // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.picBox3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(510, 376);
+            this.panel6.Size = new System.Drawing.Size(510, 444);
             this.panel6.TabIndex = 0;
             // 
             // picBox3
@@ -206,7 +208,7 @@
             this.picBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picBox3.Location = new System.Drawing.Point(0, 0);
             this.picBox3.Name = "picBox3";
-            this.picBox3.Size = new System.Drawing.Size(510, 376);
+            this.picBox3.Size = new System.Drawing.Size(506, 440);
             this.picBox3.TabIndex = 0;
             this.picBox3.TabStop = false;
             // 
@@ -217,16 +219,17 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1025, 389);
+            this.panel2.Size = new System.Drawing.Size(1019, 389);
             this.panel2.TabIndex = 0;
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.picBox2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(510, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(515, 389);
+            this.panel5.Size = new System.Drawing.Size(509, 389);
             this.panel5.TabIndex = 1;
             // 
             // picBox2
@@ -234,12 +237,13 @@
             this.picBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picBox2.Location = new System.Drawing.Point(0, 0);
             this.picBox2.Name = "picBox2";
-            this.picBox2.Size = new System.Drawing.Size(515, 389);
+            this.picBox2.Size = new System.Drawing.Size(505, 385);
             this.picBox2.TabIndex = 0;
             this.picBox2.TabStop = false;
             // 
             // panel4
             // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.picBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -252,73 +256,38 @@
             this.picBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picBox1.Location = new System.Drawing.Point(0, 0);
             this.picBox1.Name = "picBox1";
-            this.picBox1.Size = new System.Drawing.Size(510, 389);
+            this.picBox1.Size = new System.Drawing.Size(506, 385);
             this.picBox1.TabIndex = 0;
             this.picBox1.TabStop = false;
-            // 
-            // txtRailway
-            // 
-            this.txtRailway.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRailway.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtRailway.Location = new System.Drawing.Point(1616, 81);
-            this.txtRailway.Name = "txtRailway";
-            this.txtRailway.Size = new System.Drawing.Size(103, 30);
-            this.txtRailway.TabIndex = 2;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Honeydew;
-            this.label1.Location = new System.Drawing.Point(1465, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 19);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "主桁距离(cm)";
-            // 
             // panelmax
             // 
             this.panelmax.Controls.Add(this.panel8);
             this.panelmax.Controls.Add(this.panel1);
+            this.panelmax.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelmax.Location = new System.Drawing.Point(22, 133);
             this.panelmax.Name = "panelmax";
-            this.panelmax.Size = new System.Drawing.Size(1745, 765);
+            this.panelmax.Size = new System.Drawing.Size(1832, 833);
             this.panelmax.TabIndex = 4;
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.panel10);
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel8.Controls.Add(this.panel9);
+            this.panel8.Controls.Add(this.panel10);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(1025, 0);
+            this.panel8.Location = new System.Drawing.Point(1019, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(720, 765);
+            this.panel8.Size = new System.Drawing.Size(813, 833);
             this.panel8.TabIndex = 2;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.picBox5);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(720, 564);
-            this.panel10.TabIndex = 1;
-            // 
-            // picBox5
-            // 
-            this.picBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picBox5.Location = new System.Drawing.Point(0, 0);
-            this.picBox5.Name = "picBox5";
-            this.picBox5.Size = new System.Drawing.Size(720, 564);
-            this.picBox5.TabIndex = 0;
-            this.picBox5.TabStop = false;
             // 
             // panel9
             // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel9.Controls.Add(this.label2);
             this.panel9.Controls.Add(this.comboBox1);
             this.panel9.Controls.Add(this.auto);
@@ -327,16 +296,16 @@
             this.panel9.Controls.Add(this.down);
             this.panel9.Controls.Add(this.up);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Location = new System.Drawing.Point(0, 564);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(720, 765);
+            this.panel9.Size = new System.Drawing.Size(809, 265);
             this.panel9.TabIndex = 0;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(483, 684);
+            this.label2.Location = new System.Drawing.Point(418, 162);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 19);
             this.label2.TabIndex = 6;
@@ -353,14 +322,14 @@
             "5",
             "6",
             "7"});
-            this.comboBox1.Location = new System.Drawing.Point(612, 681);
+            this.comboBox1.Location = new System.Drawing.Point(546, 159);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(95, 26);
             this.comboBox1.TabIndex = 5;
             // 
             // auto
             // 
-            this.auto.Location = new System.Drawing.Point(201, 644);
+            this.auto.Location = new System.Drawing.Point(192, 99);
             this.auto.Name = "auto";
             this.auto.Size = new System.Drawing.Size(104, 30);
             this.auto.TabIndex = 4;
@@ -370,7 +339,7 @@
             // 
             // right
             // 
-            this.right.Location = new System.Drawing.Point(363, 644);
+            this.right.Location = new System.Drawing.Point(358, 99);
             this.right.Name = "right";
             this.right.Size = new System.Drawing.Size(90, 30);
             this.right.TabIndex = 3;
@@ -382,7 +351,7 @@
             // 
             // left
             // 
-            this.left.Location = new System.Drawing.Point(40, 644);
+            this.left.Location = new System.Drawing.Point(34, 99);
             this.left.Name = "left";
             this.left.Size = new System.Drawing.Size(91, 30);
             this.left.TabIndex = 2;
@@ -393,7 +362,7 @@
             // 
             // down
             // 
-            this.down.Location = new System.Drawing.Point(201, 708);
+            this.down.Location = new System.Drawing.Point(192, 181);
             this.down.Name = "down";
             this.down.Size = new System.Drawing.Size(104, 30);
             this.down.TabIndex = 1;
@@ -404,24 +373,50 @@
             // 
             // up
             // 
-            this.up.Location = new System.Drawing.Point(201, 582);
+            this.up.Location = new System.Drawing.Point(192, 28);
             this.up.Name = "up";
-            this.up.Size = new System.Drawing.Size(104, 37);
+            this.up.Size = new System.Drawing.Size(104, 26);
             this.up.TabIndex = 0;
             this.up.Text = "UP";
             this.up.UseVisualStyleBackColor = true;
             this.up.MouseDown += new System.Windows.Forms.MouseEventHandler(this.up_MouseDown);
             this.up.MouseUp += new System.Windows.Forms.MouseEventHandler(this.up_MouseUp);
             // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.picBox5);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(809, 564);
+            this.panel10.TabIndex = 1;
+            // 
+            // picBox5
+            // 
+            this.picBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBox5.Location = new System.Drawing.Point(0, 0);
+            this.picBox5.Name = "picBox5";
+            this.picBox5.Size = new System.Drawing.Size(805, 560);
+            this.picBox5.TabIndex = 0;
+            this.picBox5.TabStop = false;
+            // 
+            // paneltop
+            // 
+            this.paneltop.Controls.Add(this.menuStrip1);
+            this.paneltop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.paneltop.Location = new System.Drawing.Point(22, 72);
+            this.paneltop.Name = "paneltop";
+            this.paneltop.Size = new System.Drawing.Size(1832, 61);
+            this.paneltop.TabIndex = 5;
+            // 
             // VideoMonitorWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1789, 922);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(1876, 990);
             this.Controls.Add(this.panelmax);
-            this.Controls.Add(this.txtRailway);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.paneltop);
             this.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -452,12 +447,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).EndInit();
             this.panelmax.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBox5)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox5)).EndInit();
+            this.paneltop.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -480,9 +475,7 @@
         private System.Windows.Forms.PictureBox picBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox picBox1;
-        private System.Windows.Forms.TextBox txtRailway;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem btnVideo5;
         private System.Windows.Forms.Panel panelmax;
         private System.Windows.Forms.Panel panel8;
@@ -496,5 +489,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button auto;
+        private System.Windows.Forms.Panel paneltop;
     }
 }

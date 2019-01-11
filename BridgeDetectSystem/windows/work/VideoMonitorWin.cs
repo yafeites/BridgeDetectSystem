@@ -65,12 +65,13 @@ namespace BridgeDetectSystem
         private void initial()
         {
             #region 窗体初始化
-
+            this.panel1.Width = this.panelmax.Width / 2;
             this.panel2.Height = this.panel1.Height / 2;
             this.panel4.Width = this.panel2.Width / 2;
             this.panel6.Width = this.panel3.Width / 2;
-            this.panel10.Height = 4 * this.panel9.Height / 5;
-            this.panel1.Width =3* this.panelmax.Width / 5;
+            this.panel10.Height = 6 * this.panel8.Height / 10;
+           
+            
             #endregion
         }
 
@@ -162,7 +163,7 @@ namespace BridgeDetectSystem
         {
             foreach (Control ctr in Controls)
             {
-                if (ctr is Panel || ctr is PictureBox)
+                if ((ctr is Panel &&!ctr.Name.Equals("paneltop") || ctr is PictureBox))
                 {
                     Controls.Remove(ctr);
                 }
