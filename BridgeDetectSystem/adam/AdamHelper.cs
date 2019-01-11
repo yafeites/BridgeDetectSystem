@@ -198,27 +198,27 @@ namespace BridgeDetectSystem.adam
                     #region 锚杆力，接收但不显示，不保存，不后台报警
                     //  for (j = 4; j < 8; j++)//锚杆力
 
-                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 600, 1, 0);
                     tempDic.TryGetValue(4, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
 
                     Anchor anchor0 = new Anchor(0, forceSensor);
                     anchorDic[anchor0.id] = anchor0;
 
-                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 600, 1, 0);
                     tempDic.TryGetValue(5, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
 
                     Anchor anchor1 = new Anchor(1, forceSensor);
                     anchorDic[anchor1.id] = anchor1;
 
-                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 600, 1, 0);
                     tempDic.TryGetValue(6, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
                     Anchor anchor2 = new Anchor(2, forceSensor);
                     anchorDic[anchor2.id] = anchor2;
 
-                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 300, 1, 0);
+                    forceSensor = new Sensor(SensorType.forceSensor, 4, 20, 600, 1, 0);
                     tempDic.TryGetValue(7, out forceData);
                     forceSensor.readValue = double.Parse(forceData);
 
