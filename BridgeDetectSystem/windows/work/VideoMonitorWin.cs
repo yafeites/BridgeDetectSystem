@@ -99,11 +99,12 @@ namespace BridgeDetectSystem
                 PictureBox picbox1 = (PictureBox)c[0];
                 try
                 {
-                    player.Preview(picbox1, 5);
+                    player.Preview(picbox1, 4);
                 }
                 catch (VideoPlayerException ex)
                 {
-                    MessageBox.Show("第" + 5 + "路摄像头出现问题：" + ex.Message);
+                   MessageBox.Show("第" + 5 + "路摄像头出现问题：" + ex.Message);
+                   
                 }
             }
 
@@ -134,7 +135,7 @@ namespace BridgeDetectSystem
                 PictureBox picbox1 = (PictureBox)c[0];
                 try
                 {
-                    player.StopPreview(picbox1, 5);
+                    player.StopPreview(picbox1, 4);
                 }
                 catch (VideoPlayerException ex)
                 {
@@ -254,44 +255,44 @@ namespace BridgeDetectSystem
 
         private void up_MouseUp(object sender, MouseEventArgs e)
         {
-            player.ControlOpertion(5, "up", false, (uint)comboBox1.SelectedIndex + 1);
+            player.ControlOpertion(4, "up", false, (uint)comboBox1.SelectedIndex + 1);
         }
 
         private void up_MouseDown(object sender, MouseEventArgs e)
         {
-            player.ControlOpertion(5, "up", true, (uint)comboBox1.SelectedIndex + 1);
+            player.ControlOpertion(4, "up", true, (uint)comboBox1.SelectedIndex + 1);
         }
 
         
 
         private void right_MouseDown(object sender, MouseEventArgs e)
         {
-            player.ControlOpertion(5, "right", true, (uint)comboBox1.SelectedIndex + 1);
+            player.ControlOpertion(4, "right", true, (uint)comboBox1.SelectedIndex + 1);
         }
 
         private void right_MouseUp(object sender, MouseEventArgs e)
         {
-            player.ControlOpertion(5, "right", false, (uint)comboBox1.SelectedIndex + 1);
+            player.ControlOpertion(4, "right", false, (uint)comboBox1.SelectedIndex + 1);
         }
 
         private void left_MouseDown(object sender, MouseEventArgs e)
         {
-            player.ControlOpertion(5, "left", true, (uint)comboBox1.SelectedIndex + 1);
+            player.ControlOpertion(4, "left", true, (uint)comboBox1.SelectedIndex + 1);
         }
 
         private void left_MouseUp(object sender, MouseEventArgs e)
         {
-            player.ControlOpertion(5, "left",false, (uint)comboBox1.SelectedIndex + 1);
+            player.ControlOpertion(4, "left",false, (uint)comboBox1.SelectedIndex + 1);
         }
             private void down_MouseDown(object sender, MouseEventArgs e)
         {
-            player.ControlOpertion(5, "down", true, (uint)comboBox1.SelectedIndex + 1);
+            player.ControlOpertion(4, "down", true, (uint)comboBox1.SelectedIndex + 1);
            
         }
 
         private void down_MouseUp(object sender, MouseEventArgs e)
         {
-            player.ControlOpertion(5, "down", false, (uint)comboBox1.SelectedIndex + 1);
+            player.ControlOpertion(4, "down", false, (uint)comboBox1.SelectedIndex + 1);
             
         }
         private void right_Click(object sender, EventArgs e)
@@ -310,12 +311,12 @@ namespace BridgeDetectSystem
         {
             if( auto.Text.Equals("AUTO"))
              { 
-                player.ControlAuto(5, true, (uint)comboBox1.SelectedIndex + 1);
+                player.ControlAuto(4, true, (uint)comboBox1.SelectedIndex + 1);
                 auto.Text = "STOP";
             }
             else if(auto.Text.Equals("STOP"))
             {
-                player.ControlAuto(5, false, (uint)comboBox1.SelectedIndex + 1);
+                player.ControlAuto(4, false, (uint)comboBox1.SelectedIndex + 1);
                 auto.Text = "AUTO";
             }
             

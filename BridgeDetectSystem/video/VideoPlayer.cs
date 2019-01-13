@@ -64,11 +64,11 @@ namespace BridgeDetectSystem.video
         public void ControlAuto(int index, bool stoporstart,uint n)
         {
             if (stoporstart == true){
-                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.PAN_AUTO,1,n);
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.PAN_AUTO,0,n);
             }
             else
             {
-                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.PAN_AUTO, 0, n);
+                CHCNetSDK.NET_DVR_PTZControlWithSpeed(m_lRealHandle[index], CHCNetSDK.PAN_AUTO, 1, n);
             }
             
         }
@@ -77,10 +77,10 @@ namespace BridgeDetectSystem.video
         /// </summary>
         public void ControlOpertion(int index,String opertion,bool stoporstart,uint n )
         {
-            uint flag=0;
+            uint flag=1;
             if (stoporstart == true)
             {
-                flag = 1;
+                flag = 0;
             }
             
             if (opertion.Equals("down"))
