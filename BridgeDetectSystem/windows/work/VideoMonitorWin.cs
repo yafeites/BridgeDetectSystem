@@ -9,7 +9,8 @@ namespace BridgeDetectSystem
 {
     public partial class VideoMonitorWin : MetroFramework.Forms.MetroForm
     {
-
+        bool testflag = true;
+        int videoflag = 1;
         VideoPlayer player = null;
         //AdamHelper2 adamHelper2 = null;
        // WarningManager2 warningManager2 = null;
@@ -54,8 +55,8 @@ namespace BridgeDetectSystem
 
             #endregion
 
-
-            ShowPreview();
+            timer1.Enabled = true;
+            //ShowPreview(0);
           
 
             
@@ -74,10 +75,45 @@ namespace BridgeDetectSystem
             
             #endregion
         }
+        private void ShowPreview(int i)
+        {
+            Control[] ctr = this.panel1.Controls.Find("picBox" + (i + 1), true);
+            if (ctr.Length > 0)
+            {
+                PictureBox picbox = (PictureBox)ctr[0];
+                try
+                {
+                    player.Preview(picbox, i);
+                }
+                catch (VideoPlayerException ex)
+                {
+                    MessageBox.Show("第" + (i + 1) + "路摄像头出现问题：" + ex.Message);
+                }
+            }
+        }
+
 
         private void ShowPreview()
         {
-            for (int i = 0; i < 4; i++)
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Control[] ctr = this.panel1.Controls.Find("picBox" + (i + 1), true);
+            //    if (ctr.Length > 0)
+            //    {
+            //        PictureBox picbox = (PictureBox)ctr[0];
+            //        try
+            //        {
+            //            player.Preview(picbox, i);
+            //        }
+            //        catch (VideoPlayerException ex)
+            //        {
+            //            MessageBox.Show("第" + (i + 1) + "路摄像头出现问题：" + ex.Message);
+            //        }
+            //    }
+
+            //}
+
+           for (int i = 0; i < 4; i++)
             {
                 Control[] ctr = this.panel1.Controls.Find("picBox" + (i + 1), true);
                 if (ctr.Length > 0)
@@ -93,6 +129,7 @@ namespace BridgeDetectSystem
                     }
                 }
             }
+            
             Control[] c = this.panel10.Controls.Find("picBox" + 5, true);
             if(c.Length>0)
             {
@@ -109,7 +146,22 @@ namespace BridgeDetectSystem
             }
 
         }
-
+        private void StopPreview(int i)
+        {
+            Control[] ctr = this.panel1.Controls.Find("picBox" + (i + 1), true);
+            if (ctr.Length > 0)
+            {
+                PictureBox picbox = (PictureBox)ctr[0];
+                try
+                {
+                    player.StopPreview(picbox, i);
+                }
+                catch (VideoPlayerException ex)
+                {
+                    MessageBox.Show("第" + (i + 1) + "路摄像头出现问题：" + ex.Message);
+                }
+            }
+        }
         private void StopPreview()
         {
             for (int i = 0; i < 4; i++)
@@ -197,6 +249,7 @@ namespace BridgeDetectSystem
         private void CreateSinglePreview(int index)
         {
             StopPreview();
+            videoflag = 0;
             RemoveAllPanelAndPictureBox();
             AddPictureBox();
             ShowSinglePreview(index);
@@ -320,6 +373,27 @@ namespace BridgeDetectSystem
                 auto.Text = "AUTO";
             }
             
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            if (testflag==true)
+            {
+                ShowPreview(0);
+                testflag = false;
+            }
+            
+            else
+            {
+                StopPreview(0);
+                testflag = true;
+            }
+            
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
 
         }
     }

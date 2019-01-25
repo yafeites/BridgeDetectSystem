@@ -325,5 +325,8 @@ namespace BridgeDetectSystem.video
             }
             CHCNetSDK.NET_DVR_Cleanup();
         }
+        ///预览抓图
+     
+
     }
 }

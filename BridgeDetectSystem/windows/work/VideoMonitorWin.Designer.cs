@@ -62,6 +62,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.picBox5 = new System.Windows.Forms.PictureBox();
             this.paneltop = new System.Windows.Forms.Panel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -262,7 +263,8 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // panelmax
             // 
@@ -410,6 +412,11 @@
             this.paneltop.Size = new System.Drawing.Size(1832, 61);
             this.paneltop.TabIndex = 5;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // VideoMonitorWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -490,5 +497,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button auto;
         private System.Windows.Forms.Panel paneltop;
+        private System.Windows.Forms.Timer timer2;
     }
 }
