@@ -7,13 +7,17 @@ using System.Threading;
 
 namespace BridgeDetectSystem
 {
+
     public partial class VideoMonitorWin : MetroFramework.Forms.MetroForm
     {
-        bool testflag = true;
+        int turnpic =1;
+        bool testflag = false;
         int videoflag = 1;
+        private object obj = new object();
         VideoPlayer player = null;
+        System.Drawing.Image bmp;
         //AdamHelper2 adamHelper2 = null;
-       // WarningManager2 warningManager2 = null;
+        // WarningManager2 warningManager2 = null;
 
         public VideoMonitorWin()
         {
@@ -56,7 +60,7 @@ namespace BridgeDetectSystem
             #endregion
 
             timer1.Enabled = true;
-            //ShowPreview(0);
+            ShowPreview(0);
           
 
             
@@ -380,13 +384,45 @@ namespace BridgeDetectSystem
         {
             if (testflag==true)
             {
+                //if(bmp!=null)
+                //{
+                //    bmp.Dispose();
+                //}
+                timer2.Enabled = true;
+                
+                //Control[] ctr = this.panel1.Controls.Find("picBox1", true);
+                //PictureBox picbox = (PictureBox)ctr[0];
                 ShowPreview(0);
+             
+
+                // player.Screenshot(0,turnpic);
+
                 testflag = false;
             }
             
             else
             {
+                Control[] ctr = this.panel1.Controls.Find("picBox1", true);
+                PictureBox picbox = (PictureBox)ctr[0];
+                
+                    if (System.IO.File.Exists("d:\\test"+ turnpic + ".bmp"))
+                    {
+
+                        //System.Drawing.Image img = System.Drawing.Image.FromFile("d:\\test.bmp");
+                        //bmp = new System.Drawing.Bitmap(img);
+                        //img.Dispose();
+                        //picbox.Image = bmp;
+
+                        System.IO.FileStream pFileStream = new System.IO.FileStream("d:\\test" + turnpic + ".bmp", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                        picbox.Image = System.Drawing.Image.FromStream(pFileStream);
+                        pFileStream.Close();
+                        pFileStream.Dispose();
+                    }
+                
                 StopPreview(0);
+                
+                
+                turnpic = (turnpic + 1 )% 100;
                 testflag = true;
             }
             
@@ -394,7 +430,11 @@ namespace BridgeDetectSystem
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-
+            
+            System.IO.File.Delete("d:\\test"+(turnpic+90)%100+".bmp");           
+          MessageBox.Show( player.Screenshot(0,turnpic)+"!");
+            timer2.Enabled = false;
+            
         }
     }
 

@@ -326,7 +326,14 @@ namespace BridgeDetectSystem.video
             CHCNetSDK.NET_DVR_Cleanup();
         }
         ///预览抓图
-     
+       public String  Screenshot(int i,int n)
+        {
+            DateTime before = System.DateTime.Now;
+            CHCNetSDK.NET_DVR_CapturePicture(m_lRealHandle[i], "d:\\test" + n + ".bmp");
+            DateTime after = System.DateTime.Now;
+            TimeSpan ts = after.Subtract(before);
+            return ts.TotalMilliseconds.ToString();
+        }
 
     }
 }

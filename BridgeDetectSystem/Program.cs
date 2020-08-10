@@ -25,7 +25,10 @@ namespace BridgeDetectSystem
             if (login.ShowDialog() == DialogResult.OK)
             {
                 login.Close();
-                Application.Run(new MainWin());
+                
+                    Application.Run(new MainWin());
+                
+               
             }
         }
 

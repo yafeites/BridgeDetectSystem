@@ -258,12 +258,13 @@
             this.picBox1.Location = new System.Drawing.Point(0, 0);
             this.picBox1.Name = "picBox1";
             this.picBox1.Size = new System.Drawing.Size(506, 385);
+            this.picBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox1.TabIndex = 0;
             this.picBox1.TabStop = false;
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // panelmax
@@ -414,7 +415,7 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 10;
+            this.timer2.Interval = 350;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // VideoMonitorWin
